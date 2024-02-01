@@ -96,8 +96,8 @@ async def next_page(bot, query):
         ]
     else:
         btn = []
-        for file_num, file in enumerate(files, start=offset+1):
-            files_link += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{file.file_id}>[{get_size(file.file_size)}] {file.file_name}</a></b>"""
+            for file in files:
+                files_link += f"""<b>\n\n‼️ <a href=https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}>[{get_size(file.file_size)}] {file.file_name}</a></b>"""
 
     btn.insert(0,
         [
@@ -665,8 +665,10 @@ async def auto_filter(client, msg, spoll=False):
         ]
     else:
         btn = []
-        for file_num, file in enumerate(files, start=1):
-            files_link += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{file.file_id}>[{get_size(file.file_size)}] {file.file_name}</a></b>"""
+            for file in files:
+                files_link += f"""<b>\n\n‼️ <a href=https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}>[{get_size(file.file_size)}] {file.file_name}</a></b>"""
+
+        #t.me/{temp.U_NAME}?start=file_{file.file_id}>[{get_size(file.file_size)}] {file.file_name}</a></b>"""
         
     btn.insert(0,
         [
